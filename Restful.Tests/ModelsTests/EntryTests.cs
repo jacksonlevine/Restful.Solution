@@ -45,5 +45,13 @@ namespace Restful.Tests
       Entry e = new Entry();
       Assert.AreEqual(false, e.Urgent);
     }
+    [TestMethod]
+    public void Entry_HasAPrivateStaticListOfAllEntriesAccessibleThroughGetAll_ListOfString()
+    {
+      Entry e = new Entry();
+      Entry e1 = new Entry();
+      Entry e2 = new Entry();
+      Assert.AreEqual(3, Entry.GetAll().Count);
+    }
   }
 }
