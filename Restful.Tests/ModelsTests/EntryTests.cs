@@ -19,5 +19,12 @@ namespace Restful.Tests
       e.Message = "Tester";
       Assert.AreEqual("Tester", e.Message);
     }
+    [TestMethod]
+    public void Entry_HasPublicNameProperty_String()
+    {
+      Entry e = new Entry();
+      e.Name = "Jackson";
+      Assert.AreEqual("Jackson", e.Name);
+    }
   }
 }
