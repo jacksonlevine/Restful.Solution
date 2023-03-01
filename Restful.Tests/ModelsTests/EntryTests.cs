@@ -10,6 +10,14 @@ namespace Restful.Tests
     public void Entry_CreatesInstanceOfEntry_Entry()
     {
       Entry e = new Entry();
+      Assert.AreEqual(typeof(Entry), e.GetType());
+    }
+    [TestMethod]
+    public void Entry_HasPublicMessageProperty_String()
+    {
+      Entry e = new Entry();
+      e.Message = "Tester";
+      Assert.AreEqual("Tester", e.Message);
     }
   }
 }
