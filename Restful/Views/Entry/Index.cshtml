@@ -4,22 +4,23 @@
   <title>Entries for @DateTime.Now.ToShortDateString()</title>
 </head>
 <body>
+  <a href="/">back to home page</a>
   @using Restful.Models
+  <form action="/entry" method="post">
+  <label for="name">Enter name:</label>
+  <input type="text" id="name" name="name">
+  <label for="message">Enter message:</label>
+  <input type="text" id="message" name="message">
+  <button type="submit">Click here to add your message to @DateTime.Now.ToShortDateString()</button>
+  </form>
   @foreach (Entry element in Model)
   {
     <div class="msg">
-      <h2>Name: @element.Name</h2>
-      <h2>Date: @element.Date</h2>
-      <h2>Time: @element.Time</h2>
-      <p>Message: @element.Message</p>
+      <p>Name: @element.Name</p>
+      <p>Date: @element.Date</p>
+      <p>Time: @element.Time</p>
+      <h2>Message: @element.Message</h2>
     </div>
   }
-  <form action="/entry" method="post">
-    <label for="name">Enter name:</label>
-    <input type="text" id="name" name="name">
-    <label for="message">Enter message:</label>
-    <input type="text" id="message" name="message">
-    <button type="submit">Click here to add your message to @DateTime.Now.ToShortDateString()</button>
-  </form>
 </body>
 </html>
