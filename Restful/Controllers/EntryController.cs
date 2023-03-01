@@ -10,19 +10,21 @@ namespace Restful.Controllers
     public ActionResult Index()
     {
       List<Entry> allEntries = Entry.GetAll();
-      return Entry(allItems);
+      return View(allEntries);
     }
 
     [HttpGet("/entry/new")]
-    public ActionResult CreateForm()
+    public ActionResult Form()
     {
       return View();
     }
 
     [HttpPost("/entry")]
-    public ActionResult Create(string description)
+    public ActionResult NewEntry(string name, string message)
     {
-      Item myItem = new Item(description);
+      Entry newEntry = new Entry();
+      newEntry.Name = name;
+      newEntry.Message = message;
       return RedirectToAction("Index");
     }
   }
