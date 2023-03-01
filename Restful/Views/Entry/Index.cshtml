@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Entries for @DateTime.Now.ToShortDateString()</title>
+</head>
+<body>
+  @using Restful.Models
+  @foreach (Entry element in Model)
+  {
+    <div class="msg">
+      <h2>Name: @element.Name</h2>
+      <h2>Date: @element.Date</h2>
+      <h2>Time: @element.Time</h2>
+    </div>
+  }
+</body>
+</html>
