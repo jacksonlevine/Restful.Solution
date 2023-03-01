@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Restful.Models;
+using System;
 
 namespace Restful.Tests
 {
@@ -25,6 +26,12 @@ namespace Restful.Tests
       Entry e = new Entry();
       e.Name = "Jackson";
       Assert.AreEqual("Jackson", e.Name);
+    }
+    [TestMethod]
+    public void Entry_HasDateStringOfWhenItWasCreated_String()
+    {
+      Entry e = new Entry();
+      Assert.AreEqual(DateTime.Now.ToLongDateString(), e.Date);
     }
   }
 }
