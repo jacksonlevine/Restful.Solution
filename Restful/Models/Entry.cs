@@ -4,12 +4,12 @@ namespace Restful.Models
 {
   public class Entry
   {
-    private static List<Entry> _entries = new List<Entry>();
     public string Message { get; set; }
     public string Name { get; set; }
     public string Date { get; set; }
     public string Time { get; set; }
     public bool Urgent { get; set; }
+    private static List<Entry> _entries = new List<Entry>();
     public Entry()
     {
       Date = DateTime.Now.ToLongDateString();
