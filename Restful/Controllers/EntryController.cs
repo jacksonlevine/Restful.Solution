@@ -13,12 +13,6 @@ namespace Restful.Controllers
       return View(allEntries);
     }
 
-    [HttpGet("/entry/new")]
-    public ActionResult Form()
-    {
-      return View();
-    }
-
     [HttpPost("/entry")]
     public ActionResult NewEntry(string name, string message)
     {

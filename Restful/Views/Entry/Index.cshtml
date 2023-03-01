@@ -14,6 +14,12 @@
       <p>Message: @element.Message</p>
     </div>
   }
-  <a href="/entry/new">Click here to add a message.</a>
+  <form action="/entry" method="post">
+    <label for="name">Enter name:</label>
+    <input type="text" id="name" name="name">
+    <label for="message">Enter message:</label>
+    <input type="text" id="message" name="message">
+    <button type="submit">Click here to add your message to @DateTime.Now.ToShortDateString()</button>
+  </form>
 </body>
 </html>
