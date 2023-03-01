@@ -5,8 +5,12 @@ using System;
 namespace Restful.Tests
 {
   [TestClass]
-  public class EntryTests
+  public class EntryTests : IDisposable
   {
+    public void Dispose()
+    {
+      Entry.ClearAll();
+    }
     [TestMethod]
     public void Entry_CreatesInstanceOfEntry_Entry()
     {
@@ -52,6 +56,15 @@ namespace Restful.Tests
       Entry e1 = new Entry();
       Entry e2 = new Entry();
       Assert.AreEqual(3, Entry.GetAll().Count);
+    }
+    [TestMethod]
+    public void Entry_StaticClearAllMethodClearsEntriesList()
+    {
+      Entry e = new Entry();
+      Entry e1 = new Entry();
+      Entry e2 = new Entry();
+      Entry.ClearAll();
+      Assert.AreEqual(0, Entry.GetAll().Count);
     }
   }
 }
