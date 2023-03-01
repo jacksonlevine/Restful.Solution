@@ -6,9 +6,11 @@ namespace Restful.Models
     public string Message { get; set; }
     public string Name { get; set; }
     public string Date { get; set; }
+    public string Time { get; set; }
     public Entry()
     {
       Date = DateTime.Now.ToLongDateString();
+      Time = DateTime.Now.ToLongTimeString();
     }
   }
 }
