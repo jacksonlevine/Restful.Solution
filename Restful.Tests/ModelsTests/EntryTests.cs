@@ -34,10 +34,16 @@ namespace Restful.Tests
       Assert.AreEqual(DateTime.Now.ToLongDateString(), e.Date);
     }
     [TestMethod]
-    public void Entry_HasTimeStringOfWhatTimeItWasCreated()
+    public void Entry_HasTimeStringOfWhatTimeItWasCreated_String()
     {
       Entry e = new Entry();
       Assert.AreEqual(DateTime.Now.ToLongTimeString(), e.Time);
+    }
+    [TestMethod]
+    public void Entry_HasUrgentFlagFalseByDefault_Bool()
+    {
+      Entry e = new Entry();
+      Assert.AreEqual(false, e.Urgent);
     }
   }
 }
