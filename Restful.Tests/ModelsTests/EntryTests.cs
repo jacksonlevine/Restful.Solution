@@ -66,5 +66,19 @@ namespace Restful.Tests
       Entry.ClearAll();
       Assert.AreEqual(0, Entry.GetAll().Count);
     }
+    [TestMethod]
+    public void Entry_HasUniqueIdProperty_Int()
+    {
+      Entry e = new Entry();
+      Assert.AreEqual(0, e.Id);
+    }
+    [TestMethod]
+    public void Find_StaticMethodReturnsTheInstanceWithId()
+    {
+      Entry e = new Entry();
+      e.Message = ".";
+      Entry foundEntry = Entry.Find(0);
+      Assert.AreEqual(".", foundEntry.Message);
+    }
   }
 }
