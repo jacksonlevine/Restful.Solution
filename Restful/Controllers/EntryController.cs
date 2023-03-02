@@ -9,8 +9,8 @@ namespace Restful.Controllers
     [HttpGet("/entry")]
     public ActionResult Index()
     {
-      List<Entry> allEntries = Entry.GetAll();
-      return View(allEntries);
+      Dictionary<string, Category> allCategories = Category.GetAll();
+      return View(allCategories);
     }
 
     [HttpPost("/entry")]
