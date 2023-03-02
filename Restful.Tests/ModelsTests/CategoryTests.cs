@@ -5,8 +5,12 @@ using System;
 namespace Restful.Tests
 {
   [TestClass]
-  public class CategoryTests
+  public class CategoryTests : IDisposable
   {
+    public void Dispose()
+    {
+      Category.ClearAll();
+    }
     [TestMethod]
     public void Category_CreatesInstanceOfCategory_Category()
     {
@@ -26,6 +30,13 @@ namespace Restful.Tests
       Category c = new Category();
       c.EntryList.Add(new Entry());
       Assert.AreEqual(1, c.EntryList.Count);
+    }
+
+    [TestMethod]
+    public void GetAll_StaticMethodReturnsAllInstancesOfCategory_ListCategory()
+    {
+      Category c = new Category();
+      Assert.AreEqual(Category.GetAll().Count, 1);
     }
   }
 }
