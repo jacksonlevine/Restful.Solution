@@ -19,6 +19,8 @@ namespace Restful.Controllers
       Entry newEntry = new Entry();
       newEntry.Name = name;
       newEntry.Message = message;
+      Category c = new Category(DateTime.Now.ToShortDateString());
+      c.Add(newEntry);
       return RedirectToAction("Index");
     }
   }
